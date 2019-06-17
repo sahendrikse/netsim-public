@@ -22,7 +22,7 @@ public:
 	bool running() { return isRunning; }
 
 private:
-	bool isRunning();
+	bool isRunning;
 	SDL_Window* window;
 	SDL_Renderer* renderer;
 };

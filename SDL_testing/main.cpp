@@ -9,37 +9,23 @@ and may not be redistributed without written permission.*/
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
 
+#include "engine.h"
 
+Engine* engine = nullptr;
 
 int main(int argc, char* args[])
 {
-	//Start up SDL, create window
-	if (!init())
-	{
-		printf("Failed to initialise!\n");
-	}
-	else
-	{
-		//Load media
-		if (!loadMedia())
-		{
-			printf("Failed to load media!\n");
-		}
-		else
-		{
-			//Apply image
-			SDL_BlitSurface( gHelloWorld, NULL, gScreenSurface, NULL );
+	engine = new Engine();
+	engine->init("netsim-engine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, false);
 
-			//Update surface
-			SDL_UpdateWindowSurface( gWindow );
-
-			//Wait five seconds
-			SDL_Delay( 5000 );
-		}
+	while (engine->running())
+	{
+		engine->handleEvents();
+		engine->update();
+		engine->render();
 	}
 
-	//Free resources and close SDL
-	close();
+	engine->clear();
 
 	return 0;
 }

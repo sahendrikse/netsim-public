@@ -37,7 +37,7 @@ void Engine::init( const char* title, int xpos, int ypos, int width, int height,
 			printf("Renderer loaded successfully!\n");
 		}
 
-		isRunning() == true;
+		isRunning == true;
 	}
 	else
 	{
