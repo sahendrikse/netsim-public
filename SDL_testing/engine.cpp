@@ -1,4 +1,5 @@
 #include "engine.h"
+#include <iostream>
 
 Engine::Engine() 
 {}
@@ -37,11 +38,11 @@ void Engine::init( const char* title, int xpos, int ypos, int width, int height,
 			printf("Renderer loaded successfully!\n");
 		}
 
-		isRunning == true;
+		isRunning = true;
 	}
 	else
 	{
-		isRunning == false;
+		isRunning = false;
 	}
 }
 
@@ -53,7 +54,7 @@ void Engine::handleEvents()
 	switch ( event.type )
 	{
 	case SDL_QUIT:
-		isRunning == false;
+		isRunning = false;
 		break;
 	default:
 		break;
@@ -62,7 +63,10 @@ void Engine::handleEvents()
 }
 
 void Engine::update()
-{}
+{
+	cnt++;
+	std::cout << cnt << std::endl;;
+}
 
 void Engine::render()
 {
