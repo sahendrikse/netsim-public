@@ -6,12 +6,17 @@ and may not be redistributed without written permission.*/
 #include <stdio.h>
 #include "engine.h"
 
+
 Engine* engine = nullptr;
+
 
 int main(int argc, char* args[])
 {
 	engine = new Engine();
-	engine->init("netsim-engine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, false);
+	engine->init("netsim-engine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1920, 1080, true);
+
+
+
 
 	while (engine->running())
 	{

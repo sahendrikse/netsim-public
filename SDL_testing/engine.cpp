@@ -1,6 +1,8 @@
 #include "engine.h"
 #include <iostream>
 
+SDL_Texture* gTex;
+
 Engine::Engine() 
 {}
 
@@ -44,6 +46,13 @@ void Engine::init( const char* title, int xpos, int ypos, int width, int height,
 	{
 		isRunning = false;
 	}
+
+	SDL_Surface* gSurface = IMG_Load("C:\Users\stehe\Desktop\key.png");
+	gTex = SDL_CreateTextureFromSurface(renderer, gSurface);
+
+	SDL_FreeSurface(gSurface);
+
+
 }
 
 void Engine::handleEvents()
@@ -71,8 +80,9 @@ void Engine::update()
 void Engine::render()
 {
 	SDL_RenderClear( renderer );
-	//
+	SDL_RenderCopy(renderer, gTex, NULL, NULL);
 	SDL_RenderPresent( renderer );
+
 }
 
 void Engine::clear()

@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="data">
+      <UniqueIdentifier>{80ee2600-5f35-4701-8529-0abca000bb2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data\art">
+      <UniqueIdentifier>{f25b5861-2c52-48c4-82d3-f7e3a69d49c9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -26,5 +32,10 @@
     <ClInclude Include="engine.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\Desktop\key.png">
+      <Filter>data\art</Filter>
+    </Image>
   </ItemGroup>
 </Project>
